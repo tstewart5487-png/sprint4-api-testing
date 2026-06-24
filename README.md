@@ -42,7 +42,6 @@ Tests cover the Fast Delivery service calculation endpoint (XML-based), includin
 ## Bugs Found
 
 Bug reports were filed in Jira (project: **S4AT**). Key issues include:
-
 - **500 Internal Server Error** returned instead of `400 Bad Request` for invalid input types (decimal, string, special characters, non-Latin) across both endpoints
 - **Kit API accepts invalid data** — negative product IDs, missing product IDs, negative quantities, empty quantities, and extreme quantities all returned `200 OK` instead of `400 Bad Request`
 - **Delivery time boundary failure** — `isItPossibleToDeliver="false"` not returned for times outside 7–21; endpoint returns a successful response instead
@@ -55,10 +54,9 @@ Bug reports were filed in Jira (project: **S4AT**). Key issues include:
 
 | File | Description |
 |---|---|
-| `test-cases.csv` | All test cases with steps, test data, expected vs. actual results, and status |
+| `test-cases project 4.html` | [Interactive test case viewer](https://tstewart5487-png.github.io/sprint4-api-testing/test-cases%20project%204.html) — filterable by section, status, and keyword |
+| `Project 4_ Task - Test Cases.csv` | Raw test cases with steps, test data, expected vs. actual results, and status |
 | `README.md` | This file |
-
-> **Note:** Postman collection not included in this repo. Bug reports are linked directly from the test cases CSV and tracked in Jira at `tstewart5487qa.atlassian.net`.
 
 ---
 
