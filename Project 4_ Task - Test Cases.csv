@@ -1,0 +1,2003 @@
+Test Cases,Test Steps,Test Data (Request Body),Expected Result,Actual Result,Status,Link to Bug Report
+1. Verify the user can add an existing product ID to the kit. ,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request by using an existing product ID in the path params and request body.
+
+3. The user adds existing products to the kit on the response.
+
+4. The user gets Status: 200 OK on the response.","Path params: id=6
+
+{
+  ""productsList"": [
+    {
+      ""id"": 3,
+      ""quantity"": 3
+    }
+  ]
+}","- Added existing products to the kit
+
+- Status: 200 OK","- Added existing products to the kit
+
+- Status: 200 OK",Passed,
+2. Verify the user can add the same exisiting product ID to the Kit.,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request by using the same existing product ID in the path params and request body.
+
+3. The user adds existing products to the kit on the response.
+
+4. The user gets Status: 200 OK on the response.","Path params: id=6
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 1,
+            ""quantity"": 2
+        }
+    ]
+}","-Updated quantity of existing product in the kit
+
+-Statuse: 200 OK","-Updated quantity of existing product in the kit
+
+-Statuse: 200 OK",Passed,
+3. Verify the user can add multiple existing products to a kit,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request by using multiple existing product IDs in the path params and request body.
+
+3. The user adds existing products to the kit on the response.
+
+4. The user gets Status: 200 OK on the response.","Path params: id=6
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 2,
+            ""quantity"": 2
+        }
+    ]
+}","-Added existing products to the kit
+
+-Status: 200 OK","-Added existing products to the kit
+
+-Status: 200 OK",Passed,
+4. Verify the user can add 29 different products to a kit that they created.,"1. The user creates a kit by selecting POST request with URL + /api/v1/kits
+
+2.The user selects POST request with URL + api/v1/kits/:id/products 
+
+3. The user sends a request by using 29 existing product IDs in the  request body.
+
+4. The user adds existing products to the kit on the response.
+
+5. The user gets Status: 200 OK on the response.","Kit creation request body:
+{
+  ""name"": ""New Kit"",
+  ""cardId"": 1
+}
+
+Path params: id=7
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 2,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 3,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 4,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 5,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 7,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 8,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 9,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 10,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 11,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 12,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 13,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 14,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 15,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 16,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 17,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 18,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 19,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 20,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 21,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 22,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 23,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 24,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 25,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 26,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 27,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 28,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 29,
+            ""quantity"": 2
+        }
+    ]
+}","- Added 29 existing products to the kit
+
+- Status: 200 OK","- Added 29 existing products to the kit
+
+- Status: 200 OK",Passed,
+5. Verify the user can add 30 different products to a kit that they created,"1. Restart the Server
+
+2. The user creates a kit by selecting POST request with URL + /api/v1/kits
+
+3.The user selects POST request with URL + api/v1/kits/:id/products 
+
+4. The user sends a request by using 30 existing product IDs in the  request body.
+
+5. The user adds existing products to the kit on the response.
+
+6. The user gets Status: 200 OK on the response.","Creating kit request body:
+{
+  ""name"": ""New Kit"",
+  ""cardId"": 1
+}
+
+Path params: id=7
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 2,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 3,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 4,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 5,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 7,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 8,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 9,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 10,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 11,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 12,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 13,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 14,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 15,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 16,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 17,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 18,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 19,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 20,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 21,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 22,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 23,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 24,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 25,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 26,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 27,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 28,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 29,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 30,
+            ""quantity"": 2
+        }
+    ]
+}","- Added 30 existing products to the kit
+
+- Status: 200 OK","- Added 30 existing products to the kit
+
+- Status: 200 OK",Passed,
+6. Verify the user cannot add 31 different products to a kit that they created,"1. Restart the Server
+
+2. The user creates a kit by selecting POST request with URL + /api/v1/kits
+
+3.The user selects POST request with URL + api/v1/kits/:id/products 
+
+4. The user sends a request by using 31 existing product IDs in the  request body.
+
+5. The user adds existing products to the kit on the response.
+
+6. The user gets Status: 200 OK on the response.","Creating a kit request body:
+{
+  ""name"": ""New Kit"",
+  ""cardId"": 1
+}
+
+Path params: id=7
+
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 2,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 3,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 4,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 5,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 7,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 8,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 9,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 10,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 11,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 12,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 13,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 14,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 15,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 16,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 17,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 18,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 19,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 20,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 21,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 22,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 23,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 24,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 25,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 26,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 27,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 28,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 29,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 30,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 31,
+            ""quantity"": 2
+        }
+    ]
+}","- User cannot add 31 different products to a kit
+
+- 400 Bad Request is returned","- User cannot add 31 different products to a kit
+
+- 400 Bad Request is returned
+
+",Passed,
+7. Verify the user cannot add existing products to a negative numbered Kit ID,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request by using -1 as the kitID Path Param 
+
+3. The user cannot add  existing products to the negative numbered kit on the response.
+
+4. The user gets Status: 404 Not Found on the response.","Path params: id= -1
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 2,
+            ""quantity"": 2
+        }
+    ]
+}","- The user cannot add existing products to a negative numbered kit
+
+-404 Not Found returned in the response","- The user cannot add existing products to a negative numbered kit
+
+-404 Not Found returned in the response",Passed,
+8. Verify the user cannot add existing products to an empty Kit ID path param,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request by using """" as the kitID Path Param 
+
+3. The user cannot add  existing products to the empty kit on the repsonse
+
+4. The user gets Status: 404 Not Found on the response.","Path params: id= """"
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 2,
+            ""quantity"": 2
+        }
+    ]
+}","- The user cannot add existing products to an empty kit
+
+-404 Not Found returned in the response","- The user cannot add existing products to an empty kit
+
+-404 Not Found returned in the response",Passed,
+9. Verify the user cannot add existing products to a decimal numbered Kit ID,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request by using 0.1 as the kitID Path Param 
+
+3. The user cannot add  existing products to the decimal numbered kit on the repsonse
+
+4. The user gets Status: 404 Not Found on the response.","Path params: id= 0.1
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 2,
+            ""quantity"": 2
+        }
+    ]
+}","-The user cannot add  existing products to the decimal numbered kit
+
+- 404 Not Found returned in the response","-The user cannot add  existing products to the decimal numbered kit
+
+- 500 Internal Server Error returned in the response
+
+{
+    ""code"": 500,
+    ""message"": ""Non-whitespace before first tag.\nLine: 0\nColumn: 1\nChar: {""
+}",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-26
+10.  Verify the user cannot add existing products to a string Kit ID,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request by using a ""string"" as the kitID Path Param 
+
+3. The user cannot add  existing products to the kit on the repsonse
+
+4. The user gets Status: 404 Not Found on the response.","Path params: id= ""kit_ID""
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 2,
+            ""quantity"": 2
+        }
+    ]
+}","-The user cannot add  existing products to the string kit ID
+
+- 404 Not Found returned in the response","-The user cannot add  existing products to the decimal numbered kit
+
+- 500 Internal Server Error returned in the response
+
+{
+    ""code"": 500,
+    ""message"": ""Non-whitespace before first tag.\nLine: 0\nColumn: 1\nChar: {""
+}",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-27
+11. Verify the user cannot add existing prodcuts to a missing Kit ID parameter,"1. The user selects POST request with URL + api/v1/kits/products 
+
+2. The user sends a request by using existing products to add products to a kit
+with a missing kitID path param.
+
+3. The user cannot add  products to a kit param that is missing
+
+4. The user gets Status: 404 Not Found on the response.","
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 2,
+            ""quantity"": 2
+        }
+    ]
+}","-The user cannot add existing products to a missing kitID
+
+-404 Not Found returned on the response","-The user cannot add existing products to a missing kitID
+
+-405 Method Not Allowed returned in the response",Failed,https://tstewart5487qa.atlassian.net/jira/software/projects/S4AT/boards/69?selectedIssue=S4AT-2
+12. Verify the user cannot add existing prodcuts to a non-existent kitID,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request by using existing products to add products to a kit
+
+3.The  user cannot add  products to a kit with an absent kitID param
+
+4. The user gets Status: 404 Not Found on the response.","Path param: id=10
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 2,
+            ""quantity"": 2
+        }
+    ]
+}","-The  user cannot add  products to a kit with a non-existent kitID param
+
+- 404 Not Found returned in the response","-The  user cannot add  products to a kit with a non-existent kitID param
+
+- 404 Not Found returned in the response",Passed,
+13. Verify the user cannot add existing products to a kitID with non latin characters,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. TThe user sends a request by using existing products to add products to a kit
+
+3. The user cannot add  products to a kit with non laitn letter as the kitID param
+
+4. The user gets Status: 404 Not Found on the response.""","Path Param: id=测试
+
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 2,
+            ""quantity"": 2
+        }
+    ]
+}","-The  user cannot add  products to a kit with non latin character kitID param
+
+- 404 Not Found returned in the response","-The  user cannot add  products to a kit with non latin character kitID param
+
+- 500 Internal Server Error Returned in the response
+
+<!DOCTYPE html>
+<html lang=""en"">
+
+<head>
+    <meta charset=""utf-8"">
+    <title>Error</title>
+</head>
+
+<body>
+    <pre>Internal Server Error</pre>
+</body>
+
+</html>",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-28
+14. Verify the user cannot add existing products to a kitID with special characters,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request by using existing products to add products to a kit
+
+3. The user cannot add  products to a kit with special characters as the kitID param
+
+4. The user gets Status: 404 Not Found on the response.""","Path Param: id=!@#$%^&*
+
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 2,
+            ""quantity"": 2
+        }
+    ]
+}","-The  user cannot add  products to a kit with special character kitID param
+
+- 404 Not Found returned in the response","-The  user cannot add  products to a kit with special character kitID param
+
+- 405 Method Not Allowed returned in the response",Failed,https://tstewart5487qa.atlassian.net/jira/software/projects/S4AT/boards/69?selectedIssue=S4AT-2
+15. Verify the user cannot add prodcuts to a kit with negative product ID,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request by using negatiive products ID to add products to a kit
+
+3. The user cannot add  products to a kit with negative numbers as the product ID param
+
+4. The user gets Status: 400 Not Found on the response.""","Path Param: id=6
+
+{
+    ""productsList"": [
+        {
+            ""id"": -1,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        }
+    ]
+}","-The user cannot add products to a kit with negative numbers as the product ID param
+
+-400 Bad Request returned in the response","-The user can add products to a kit with negative numbers as the product ID param
+
+-200 Ok returned in the response",Failed,https://tstewart5487qa.atlassian.net/jira/software/projects/S4AT/boards/69?selectedIssue=S4AT-3
+16. Verfiy the user cannot add products to a kit with an empty product ID parameter,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request by using empty products ID to add products to a kit
+
+3. The user cannot add  products to a kit with empty value as the product ID param
+
+4. The user gets Status: 400 Not Found on the response.","Path Param: id=6
+
+{
+    ""productsList"": [
+        {
+            ""id"": """",
+            ""quantity"": 2
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        }
+    ]
+}","-The user cannot add  products to a kit with empty value as the product ID param
+
+-400 Bad Request returned in the response","-The user cannot add  products to a kit with empty value as the product ID param
+
+-500 Internal Server Error returned in the response
+
+<!DOCTYPE html>
+<html lang=""en"">
+
+<head>
+    <meta charset=""utf-8"">
+    <title>Error</title>
+</head>
+
+<body>
+    <pre>Internal Server Error</pre>
+</body>
+
+</html>",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-29
+17. Verify the user cannot add prodcuts to a kit with a product ID that is a decimal,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request by using  decimal numbered products ID to add products to a kit
+
+3. The user cannot add  products to a kit with decimal numbers as the product ID param
+
+4. The user gets Status: 400 Not Found on the response.","Path Param: id=6
+
+{
+    ""productsList"": [
+        {
+            ""id"": 0.1,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        }
+    ]
+}","-The user cannot add  products to a kit with decimal numbers as the product ID param
+
+- 400 Bad Request returned in the response","-The user cannot add  products to a kit with decimal numbers as the product ID param
+
+- 500 Internal Server Error returned in the response
+
+<!DOCTYPE html>
+<html lang=""en"">
+
+<head>
+    <meta charset=""utf-8"">
+    <title>Error</title>
+</head>
+
+<body>
+    <pre>Internal Server Error</pre>
+</body>
+
+</html>",Failed,https://tstewart5487qa.atlassian.net/jira/software/projects/S4AT/boards/69?selectedIssue=S4AT-4
+18. Verify the user cannot add produts to a kit with a string product ID,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request  by using a string as the product ID to add products to a kit
+
+3. The user cannot add  products to a kit with a string as the product ID param
+
+4. The user gets Status: 400 Not Found on the response.","Path Param: id=6
+
+{
+    ""productsList"": [
+        {
+            ""id"":  ""invalid-id"",
+            ""quantity"": 2
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        }
+    ]
+}","-The user cannot add  products to a kit with a string as the product ID param
+
+- 400 Bad Request returned in the response","-The user cannot add  products to a kit with a string as the product ID param
+
+- 500 Internal Server Error returned in the response
+
+<!DOCTYPE html>
+<html lang=""en"">
+
+<head>
+    <meta charset=""utf-8"">
+    <title>Error</title>
+</head>
+
+<body>
+    <pre>Internal Server Error</pre>
+</body>
+
+</html>",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-30
+19. Verify the user cannot add products to a kit with missing product ID parameter,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request to add products to a kit with missing product ID param
+
+3. The user cannot add  products to a kit with missing product ID param
+
+4. The user gets Status: 400 Not Found on the response.","Path Param: id=6
+
+{
+    ""productsList"": [
+        {
+            
+            ""quantity"": 2
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        }
+    ]
+}","-The user cannot add  products to a kit with missing product ID param
+
+- 400 Bad Request returned in the response","-The user can add  products to a kit with a missing product ID param
+
+- 200 OK returned in the response",Failed,https://tstewart5487qa.atlassian.net/jira/software/projects/S4AT/boards/69?selectedIssue=S4AT-5
+20. Verify the user cannot add products to a kit with a product ID that is non-existent,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request to add products to a kit with non existent product ID param
+
+3. The user cannot add  products to a kit with non existent product ID param
+
+4. The user gets Status: 400 Not Found on the response.","Path Param: id=6
+
+{
+    ""productsList"": [
+        {
+            ""id"": 93,
+            ""quantity"": 2
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        }
+    ]
+}
+","- The user cannot add  products to a kit with non existent product ID param
+
+- 400 bad Request returned in response","-The user can add  products to a kit with a non existent product ID param
+
+- 200 OK returned in the response
+
+-""quantity"": 2 returned as quantity of productID value 93
+
+",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-31
+21. Verify the user cannot add products to a kit with Non latin letters as the product ID,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request  to add products to a kit with non Latin letters as the product ID param
+
+3. The user cannot add  products to a kit with non Latin letters as the product ID param
+
+4. The user gets Status: 400 Not Found on the response.","Path Param: id=6
+
+{
+    ""productsList"": [
+        {
+            ""id"": ""Набор"",
+            ""quantity"": 2
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        }
+    ]
+}","-The user cannot add  products to a kit with non Latin letters as the product ID param
+
+- 400 bad Request returned in response","-The user cannot add  products to a kit with non Latin letters as the product ID param
+
+- 500 Internal Server Error returned in response
+
+<!DOCTYPE html>
+<html lang=""en"">
+
+<head>
+    <meta charset=""utf-8"">
+    <title>Error</title>
+</head>
+
+<body>
+    <pre>Internal Server Error</pre>
+</body>
+
+</html>",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-32
+22. Verify the user cannot add products to a kit with special characters as the product ID,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request to add products to a kit with special characters as the product ID param
+
+3. The user cannot add  products to a kit with special characters as the product ID param
+
+4. The user gets Status: 400 Not Found on the response.","Path Param: id=6
+
+{
+    ""productsList"": [
+        {
+            ""id"": ""!@#$%^&*"",
+            ""quantity"": 2
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        }
+    ]
+}","- The user cannot add products to a kit with special characters as the product ID param
+
+- 400 bad Request returned in response","- The user cannot add products to a kit with special characters as the product ID param
+
+- 500 Internal Server Error returned in response
+
+<!DOCTYPE html>
+<html lang=""en"">
+
+<head>
+    <meta charset=""utf-8"">
+    <title>Error</title>
+</head>
+
+<body>
+    <pre>Internal Server Error</pre>
+</body>
+
+</html>",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-33
+23. Verify the user cannot add products to a kit with negative numbers as the product quantity,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request to add existing products to a kit with negative numbers as the product quantity param
+
+3. The user cannot add  products to a kit with negative numbers as the product quantity param
+
+4. The user gets Status: 400 Not Found on the response.","Path param: id=6
+
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": -2
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        }
+    ]
+}","- The user cannot add  products to a kit with negative numbers as the product quantity param
+
+- 400 bad Request returned in response
+","-The user can add products to a kit with negative numbers as the product  quantity 
+
+-200 OK returned in the response",Failed,https://tstewart5487qa.atlassian.net/jira/software/projects/S4AT/boards/69?selectedIssue=S4AT-6
+24. Verify the user cannot add products to a kit with an empty product quantity,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request to add existing products to a kit with the product quantity empty
+
+3. The user cannot add  products to a kit with the product quantity empty
+
+4. The user gets Status: 400 Not Found on the response.","Path param: id=6
+
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": """"
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        }
+    ]
+}","- The user cannot add  products to a kit with the product quantity empty
+
+- 400 bad Request returned in response","- The user can add  products to a kit with the product quantity empty
+
+- 200 OK returned in response
+
+-productID value of 1 ""Orange Juice - Cold-Pressed, No Added Sugar, Preservative Free"" has ""quantity"": """"",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-34
+25. Verify the user cannot add products to a kit with a decimal number as the product quantity,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request to add existing products to a kit with a decimal number as the product quantity param
+
+3. The user cannot add  products to a kit with a decimal number as the product quantity param
+
+4. The user gets Status: 400 Not Found on the response.","Path param: id=6
+
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": 2.5
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        }
+    ]
+}","- The user cannot add  products to a kit with a decimal number as the product quantity param
+
+- 400 bad Request returned in response","- The user cannot add  products to a kit with a decimal number as the product quantity param
+
+- 500 Internal Server Error returned in response",Failed,https://tstewart5487qa.atlassian.net/jira/software/projects/S4AT/boards/69?selectedIssue=S4AT-7
+26. Verify the user cannot add products to a kit with a string as the product quantity,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request to add existing products to a kit with a string as the product quantity param
+
+3. The user cannot add  products to a kit with a string as the product quantity param
+
+4. The user gets Status: 400 Not Found on the response.","Path param: id=6
+
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": ""two""
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        }
+    ]
+}","- The user cannot add  products to a kit with a string as the product quantity param
+
+- 400 bad Request returned in response","- The user cannot add  products to a kit with a string as the product quantity param
+
+- 500 Internal Server Error returned in response
+
+{
+    ""code"": 500,
+    ""message"": ""invalid input syntax for integer: \""10two2\""""
+}",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-35
+27. Verify the user cannot add products to a kit with a missing product quantity parameter,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request to add existing products to a kit with a missing product quantity param
+
+3. The user cannot add  products to a kit with a missing product quantity param
+
+4. The user gets Status: 400 Not Found on the response.","Path param: id=6
+
+{
+    ""productsList"": [
+        {
+            ""id"": 1
+
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        }
+    ]
+}","- The user cannot add  products to a kit with a missing product quantity param
+
+- 400 bad Request returned in response","- The user cannot add  products to a kit with a missing product quantity param
+
+- 500 Internal Server Error returned in the response
+
+{
+    ""code"": 500,
+    ""message"": ""invalid input syntax for integer: \""NaN\""""
+}",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-36
+28. Verify the user cannot add products to a kit with an extreme value product quantity parameter,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request to add existing products to a kit with an extreme product quantity param
+
+3. The user cannot add  products to a kit with an extreme product quantity param
+
+4. The user gets Status: 400 Not Found on the response.","Path param: id=6
+
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": 999999999
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        }
+    ]
+}","- The user cannot add  products to a kit with an extreme product quantity param
+
+- 400 bad Request returned in response","- The user can add  products to a kit with an extreme product quantity param
+
+- 200 OK returned in the response
+
+-999999999 returned as quantity for productID  1 """"Orange Juice - Cold-Pressed, No Added Sugar, Preservative Free""",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-37
+29. Verify the user cannot add products to a kit with non Latin characters as the product quantity,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request to add existing products to a kit with non Latin letters as the product quantity param
+
+3. The user cannot add  products to a kit with non Latin letters as the  product quantity param
+
+4. The user gets Status: 400 Not Found on the response.","Path param: id=6
+
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": ""测试""
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        }
+    ]
+}","-  The user cannot add  products to a kit with non Latin letters as the  product quantity param
+
+- 400 bad Request returned in response","-  The user cannot add  products to a kit with non Latin letters as the  product quantity param
+
+-500 Internal Server Error returned in response
+
+{
+    ""code"": 500,
+    ""message"": ""invalid input syntax for integer: \""10测试2\""""
+}",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-38
+30. Verify the user cannot add products to a kit with special characters as the product quantity,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request to add existing products to a kit with special characters as the product quantity param
+
+3. The user cannot add  products to a kit with special characters as the  product quantity param
+
+4. The user gets Status: 400 Not Found on the response.","Path param: id=6
+
+{
+    ""productsList"": [
+        {
+            ""id"": 1,
+            ""quantity"": ""!@#$%^&*""
+        },
+        {
+            ""id"": 6,
+            ""quantity"": 2
+        }
+    ]
+}","- The user cannot add  products to a kit with special characters as the  product quantity param
+
+- - 400 bad Request returned in response","-The user cannot add  products to a kit with special characters as the  product quantity param
+
+-500 Internal Server Error returned in response
+
+{
+    ""code"": 500,
+    ""message"": ""invalid input syntax for integer: \""10!@#$%^&*2\""""
+}",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-39
+31. Verify the user cannot add products to  a kit with an empty array as value of productslist parameter,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request to add existing products to a kit with an empty array as value of the productslist param
+
+3. The user cannot add  products to a kit with an empty array as the  productslist param
+
+4. The user gets Status: 400 Not Found on the response.","Path Param: id=6
+
+{
+  ""productsList"": []
+}","- The user cannot add  products to a kit with an empty array as the  productslist param
+
+- 400 bad Request returned in response","- The user can add  products to a kit with an empty array as the  productslist param
+
+- 200 OK returned in the response",Failed,https://tstewart5487qa.atlassian.net/jira/software/projects/S4AT/boards/69?selectedIssue=S4AT-8
+32. Verify the user cannot add products to a kit with a missing string as value of productsList parameter,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request to add existing products to a kit with an empty string as value of the productslist param
+
+3. The user cannot add  products to a kit with an empty string as value of the  productslist param
+
+4. The user gets Status: 400 Not Found on the response.","Path Param: id=6
+
+{
+  ""productsList"": """"
+}
+
+","- The user cannot add  products to a kit with an empty string as value of the  productslist param
+
+- 400 bad Request returned in response","- The user can add  products to a kit with an empty string as value of the  productslist param
+
+-200 OK returned in response",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-9
+33. Verify the user cannot add  products to a kit with a missing request body,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request to add existing products to a kit with missing request body
+
+3. The user cannot add  products to a kit with a missing request body
+
+4. The user gets Status: 400 Not Found on the response.",Path Param: id=6,"- The user cannot add  products to a kit with a missing request body
+
+- 400 bad Request returned in response","- The user can add  products to a kit with a missing request body
+
+- 200 OK returned in response",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-10
+34. Verify the user cannot add products to a kit with incorrect JSON formattin of the productsList Parameter,"1. The user selects POST request with URL + api/v1/kits/:id/products 
+
+2. The user sends a request to add existing products to a kit incorrect JSON formatting (missing comma between object properites)
+
+3. The user cannot add  products to a kit with incorrect JSON fomatting
+
+4. The user gets Status: 400 Not Found on the response.","Path Param: id=6
+
+{
+  ""productsList"": [
+    {
+      ""id"": 1
+      ""quantity"": 2
+    }
+  ]
+}","- The user cannot add  products to a kit with incorrect JSON fomatting
+
+- - 400 bad Request returned in response","- The user cannot add  products to a kit with incorrect JSON fomatting
+
+- - 400 bad Request returned in response",Passed,
+,,,,,,
+Requirement 2 Tests,,,,,,
+,,,,,,
+,,,,,,
+"1. Verify the name of the service ""Fast Delivery""","1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with valid parameters within operating hours
+
+3. The user receives the service name in the response
+
+4. The user verifies the name is ""Fast Delivery"" and gets  200 OK on the response","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","-200 OK returned in the response
+
+<response name=""Fast Delivery""","-200 OK returned in the response
+
+<response name=""Fast Delivery""",Passed,
+"2. Verify the toBeDeliveredTime is 25-30 minutes for ""Fast Delivery"" ","1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with valid parameters within operating hours
+
+3. The user receives the delivery time range in the response
+
+4. The user verifies toBeDeliveredTime min is 25 and max is 30 and gets  200 OK on the response","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","-200 OK returned in the response    
+
+<toBeDeliveredTime>
+        <min>25</min>
+        <max>30</max>","-200 OK returned in the response    
+
+<toBeDeliveredTime>
+        <min>25</min>
+        <max>30</max>",Passed,
+3.Verify the user cannot get a delivery when the delivery time is 6 ,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with deliveryTime of 6 (outside operating hours)
+
+3. The user cannot get a delivery outside of operating hours
+
+4. The user gets isItPossibleToDeliver=""false"" and  200 OK on the response","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>6</deliveryTime>
+</InputModel>","- 200 OK returned in the response
+
+isItPossibleToDeliver=""false""","- 200 OK returned in the response
+
+- isItPossibleToDeliver=""false"" is not returned
+
+-<response name=""Fast Delivery""/> is returned",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-11
+4. Verify the user can get a delivery when deliveryTime is 7,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with deliveryTime of 7 (lower boundary of operating hours)
+
+3. The user can get a delivery within operating hours
+
+4. The user gets isItPossibleToDeliver=""true"" and  200 OK on the response","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>7</deliveryTime>
+</InputModel>","- 200 OK returned in the response
+
+isItPossibleToDeliver=""true""","- 200 OK returned in the response
+
+isItPossibleToDeliver=""true""",Passed,
+5. Verify the user can get a delivery when deliveryTime is 8 ,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with deliveryTime of 8 (one above lower boundary of operating hours)
+
+3. The user can get a delivery within operating hours
+
+4. The user gets isItPossibleToDeliver=""true"" and 200 OK on the response","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>8</deliveryTime>
+</InputModel>","- 200 OK returned in the response
+
+isItPossibleToDeliver=""true""","- 200 OK returned in the response
+
+isItPossibleToDeliver=""true""",Passed,
+6. Verify the user can get a delivery when deliveryTime is 20 ,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with deliveryTime of 20 (one below upper boundary of operating hours)
+
+3. The user can get a delivery within operating hours
+
+4. The user gets isItPossibleToDeliver=""true"" and  200 OK on the response","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>20</deliveryTime>
+</InputModel>","- 200 OK returned in the response
+
+isItPossibleToDeliver=""true""","- 200 OK returned in the response
+
+isItPossibleToDeliver=""true""",Passed,
+7. Verify the user can get a delivery when deliveryTime is 21,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xm
+l
+2. The user sends a request with deliveryTime of 21 (upper boundary of operating hours)
+
+3. The user can get a delivery within operating hours
+
+4. The user gets isItPossibleToDeliver=""true"" and 200 OK on the response","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>21</deliveryTime>
+</InputModel>","- 200 OK returned in the response
+
+isItPossibleToDeliver=""true""","- 200 OK returned in the response
+
+isItPossibleToDeliver=""true""",Passed,
+8. Verify the user cannot get a delivery when deliveryTime is 22,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with deliveryTime of 22 (outside operating hours)
+
+3. The user cannot get a delivery outside of operating hours
+
+4. The user gets isItPossibleToDeliver=""false"" and  200 OK on the response","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>22</deliveryTime>
+</InputModel>","- 200 OK returned in the response
+
+isItPossibleToDeliver=""false""","- 200 OK returned in the response
+
+- isItPossibleToDeliver=""false"" is not returned
+
+-<response name=""Fast Delivery""/> is returned",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-11
+9. Verify the user cannot get a delivery when deliveryTime is 23,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with deliveryTime of 23 (outside operating hours)
+
+3. The user cannot get a delivery outside of operating hours
+
+4. The user gets isItPossibleToDeliver=""false"" and 200 OK on the response 
+
+","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>23</deliveryTime>
+</InputModel>","- 200 OK returned in the response
+
+isItPossibleToDeliver=""false""","- 200 OK returned in the response
+
+- isItPossibleToDeliver=""false"" is not returned
+
+-<response name=""Fast Delivery""/> is returned",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-11
+10. Verify the user cannot get a delivery when deliveryTime is 24,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with deliveryTime of 24 
+
+3. The user cannot get a delivery outside of operating hours
+
+4. The user gets 400 Bad Request on the response 
+
+","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>24</deliveryTime>
+</InputModel>",- 400 Bad Request returned in the response,"- 200 OK returned in the response
+
+- isItPossibleToDeliver=""false"" is not returned
+
+-<response name=""Fast Delivery""/> is returned",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-12
+11. Verify the user cannot get a delivery when deliveryTime is 25,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with deliveryTime of 25 
+
+3. The user cannot get a delivery outside of operating hours
+
+4. The user gets 400 Bad Request on the response 
+
+","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>25</deliveryTime>
+</InputModel>",- 400 Bad Request returned in the response,"- 200 OK returned in the response
+
+- isItPossibleToDeliver=""false"" is not returned
+
+-<response name=""Fast Delivery""/> is returned",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-12
+12. Verify user cannot place an order with 0 as the productsCount value ,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsCount of 0 
+
+3. The user cannot get place an order with productsCount of 0
+
+4. The user gets 400 Bad Request on the response
+","<InputModel>
+    <productsCount>0</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>",- 400 Bad Request returned in the response,"-200 OK rerurned in the response
+
+-User can place order with productCount value of 0",Failed,https://tstewart5487qa.atlassian.net/jira/software/projects/S4AT/boards/69?selectedIssue=S4AT-13
+13. Verify the host recieves a cost of 3 when productsCount is 1,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsCount value of 1
+
+3. The host recieves a hostDeliveryCost of 3 when productsCount is 1
+
+4. The user gets 200 OK on the response","<InputModel>
+    <productsCount>1</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","- 200 OK returned in the response
+
+hostDeliveryCost=""3"" clientDeliveryCost=""0"">","- 200 OK returned in the response
+
+hostDeliveryCost=""3"" clientDeliveryCost=""0"">",Passed,
+13. Verify the host recieves a cost of 3 when productsCount is 2,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsCount value of 2
+
+3. The host recieves a hostDeliveryCost of 3 when productsCount is 2
+
+4. The user gets 200 OK on the response","<InputModel>
+    <productsCount>2</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","- 200 OK returned in the response
+
+hostDeliveryCost=""3"" clientDeliveryCost=""0"">","- 200 OK returned in the response
+
+hostDeliveryCost=""3"" clientDeliveryCost=""0""",Passed,
+14. Verify the host recieves a cost of 3 when productsCount is 6,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsCount value of 6
+
+3. The host recieves a hostDeliveryCost of 3 when productsCount is 6
+
+4. The user gets 200 OK on the response","<InputModel>
+    <productsCount>6</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","- 200 OK returned in the response
+
+hostDeliveryCost=""3"" clientDeliveryCost=""0"">","- 200 OK returned in the response
+
+hostDeliveryCost=""3"" clientDeliveryCost=""0""",Passed,
+15. Verify the host recieves a cost of 3 when productsCount is 7,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsCount value of 7
+
+3. The host recieves a hostDeliveryCost of 3 when productsCount is 7
+
+4. The user gets 200 OK on the response","<InputModel>
+    <productsCount>7</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","- 200 OK returned in the response
+
+hostDeliveryCost=""3"" clientDeliveryCost=""0"">","- 200 OK returned in the response
+
+hostDeliveryCost=""3"" clientDeliveryCost=""0""",Passed,
+15. Verify the host recieves a cost of 6 when productsCount is 8,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsCount value of 8
+
+3. The host recieves a hostDeliveryCost of 6 when productsCount is 8
+
+4. The user gets 200 OK on the response","<InputModel>
+    <productsCount>8</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","- 200 OK returned in the response
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""","- 200 OK returned in the response
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""",Passed,
+16. Verify the host recieves a cost of 6 when productsCount is 9,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsCount value of 9
+
+3. The host recieves a hostDeliveryCost of 6 when productsCount is 9
+
+4. The user gets 200 OK on the response","<InputModel>
+    <productsCount>9</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","- 200 OK returned in the response
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""","- 200 OK returned in the response
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""",Passed,
+17. Verify the host recieves a cost of 6 when productsCount is 13,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsCount value of 13
+
+3. The host recieves a hostDeliveryCost of 6 when productsCount is 13
+
+4. The user gets 200 OK on the response","<InputModel>
+    <productsCount>13</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","- 200 OK returned in the response
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""","- 200 OK returned in the response
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""",Passed,
+18. Verify the host recieves a cost of 6 when productsCount is 14,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsCount value of 14
+
+3. The host recieves a hostDeliveryCost of 6 when productsCount is 14
+
+4. The user gets 200 OK on the response","<InputModel>
+    <productsCount>14</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","- 200 OK returned in the response
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""","- 200 OK returned in the response
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""",Passed,
+19. Verify the host recieves a cost of 7 when productsCount is an extreme value,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsCount value of 30
+
+3. The host recieves a hostDeliveryCost of 7 when productsCount is 30
+
+4. The user gets 200 OK on the response","<InputModel>
+    <productsCount>30</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","- 200 OK returned in the response
+
+hostDeliveryCost=""7"" clientDeliveryCost=""9""","-200 OK returned in the response
+
+hostDeliveryCost=""6"" clientDeliveryCost=""6""",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-14
+20. Verify the host recieves a cost of 3 when the productsWeight is 0,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsWeight of 0 kg 
+
+3. The host recieves a hostDeliveryCost of 3
+
+4. The user gets 200 ok ","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","-200 OK returned in the response 
+
+hostDeliveryCost=""3"" clientDeliveryCost=""0""","-200 OK returned in the response 
+
+hostDeliveryCost=""3"" clientDeliveryCost=""0""",Passed,
+21. Verify the host recieves a cost of 3 when the productsWeight is 0.1 kg,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsWeight of 0.1 kg 
+
+3. The host recieves a hostDeliveryCost of 3
+
+4. The user gets 200 ok ","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>0.1</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","-200 OK returned in the response 
+
+hostDeliveryCost=""3"" clientDeliveryCost=""0""","-200 OK returned in the response 
+
+hostDeliveryCost=""3"" clientDeliveryCost=""0""",Passed,
+22. Verify the host recieves a cost of 3 when the productsWeight is 2.4 kg,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsWeight of 2.4 kg 
+
+3. The host recieves a hostDeliveryCost of 3
+
+4. The user gets 200 ok ","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>2.4</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","-200 OK returned in the response 
+
+hostDeliveryCost=""3"" clientDeliveryCost=""0""","-200 OK returned in the response 
+
+hostDeliveryCost=""3"" clientDeliveryCost=""0""",Passed,
+23. Verify the host recieves a cost of 3 when the productsWeight is 2.5 kg,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsWeight of 2.5 kg 
+
+3. The host recieves a hostDeliveryCost of 3
+
+4. The user gets 200 ok ","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>2.5</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","-200 OK returned in the response 
+
+hostDeliveryCost=""3"" clientDeliveryCost=""0""","-200 OK returned in the response 
+
+hostDeliveryCost=""3"" clientDeliveryCost=""0""",Passed,
+24. Verify the host recieves a cost of 6 when the productsWeight is 2.6 kg,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsWeight of 2.6 kg 
+
+3. The host recieves a hostDeliveryCost of 6
+
+4. The user gets 200 ok ","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>2.6</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","-200 OK returned in the response 
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""","-200 OK returned in the response 
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""",Passed,
+25. Verify the host recieves a cost of 6 when the productsWeight is 2.7 kg,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsWeight of 2.7 kg 
+
+3. The host recieves a hostDeliveryCost of 6
+
+4. The user gets 200 ok ","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>2.7</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","-200 OK returned in the response 
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""","-200 OK returned in the response 
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""",Passed,
+26. Verify the host recieves a cost of 6 when the productsWeight is 5.9 kg,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsWeight of 5.9 kg 
+
+3. The host recieves a hostDeliveryCost of 6
+
+4. The user gets 200 ok ","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>5.9</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","-200 OK returned in the response 
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""","-200 OK returned in the response 
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""",Passed,
+27. Verify the host recieves a cost of 6 when the productsWeight is 6.0 kg,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsWeight of 6.0 kg 
+
+3. The host recieves a hostDeliveryCost of 6
+
+4. The user gets 200 ok ","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>6.0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","-200 OK returned in the response 
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""","-200 OK returned in the response 
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""",Passed,
+28. Verify the host recieves a cost of 7 when the productsWeight is 6.1 kg,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsWeight of 6.1 kg 
+
+3. The host recieves a hostDeliveryCost of 7
+
+4. The user gets 200 ok ","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>6.1</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","-200 OK returned in the response 
+
+hostDeliveryCost=""7""
+clientDeliveryCost=""9""","-200 OK returned in the response
+
+hostDeliveryCost=""6"" clientDeliveryCost=""6""",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-15
+29. Verify the client receives a clientDeliveryCost of 0 when productsCount is 13,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsCount of 13 
+
+3. The client recieves a clientDeliveryCost of 0
+
+4. The user gets 200 ok ","<InputModel>
+    <productsCount>13</productsCount>
+    <productsWeight>1</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","-200 OK returned in the response 
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""","-200 OK returned in the response 
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""",Passed,
+30. Verify the client receives a clientDeliveryCost of 0 when productsCount is 14,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsCount of 14 
+
+3. The client recieves a clientDeliveryCost of 0
+
+4. The user gets 200 ok ","<InputModel>
+    <productsCount>14</productsCount>
+    <productsWeight>1</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","-200 OK returned in the response 
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""","-200 OK returned in the response 
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""",Passed,
+31. Verify the client receives a clientDeliveryCost of 9 when productsCount is 15,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with productsCount of 15
+
+3. The client recieves a clientDeliveryCost of 9
+
+4. The user gets 200 ok ","<InputModel>
+    <productsCount>15</productsCount>
+    <productsWeight>1</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","-200 OK returned in the response 
+
+hostDeliveryCost=""7""
+clientDeliveryCost=""9""","-200 OK returned in the response 
+
+ hostDeliveryCost=""6"" clientDeliveryCost=""6""",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-16
+32. Verify the client receives a clientDeliveryCost of 0 when productsWeight is 5.9 kg,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with prodcutsWeight of 5.9 kg
+
+3. The client recieves a clientDeliveryCost of 0
+
+4. The user gets 200 ok ","<InputModel>
+    <productsCount>5</productsCount>
+    <productsWeight>5.9</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","-200 OK returned in the response 
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""","-200 OK returned in the response 
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""",Passed,
+33. Verify the client receives a clientDeliveryCost of 0 when productsWeight is 6.0 kg,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with prodcutsWeight of 5.9 kg
+
+3. The client recieves a clientDeliveryCost of 0
+
+4. The user gets 200 ok ","<InputModel>
+    <productsCount>5</productsCount>
+    <productsWeight>6.0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","-200 OK returned in the response 
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""","-200 OK returned in the response 
+
+hostDeliveryCost=""6"" clientDeliveryCost=""0""",Passed,
+33. Verify the client receives a clientDeliveryCost of 9 when productsWeight is 6.1 kg,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with prodcutsWeight of 6.1 kg
+
+3. The client recieves a clientDeliveryCost of 9
+
+4. The user gets 200 ok ","<InputModel>
+    <productsCount>5</productsCount>
+    <productsWeight>6.1</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>","-200 OK returned in the response 
+
+clientDeliveryCost=""9""
+hostDeliveryCost=""9""","-200 OK returned in the response 
+
+hostDeliveryCost=""6"" clientDeliveryCost=""6""",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-17
+34. Verify the user cannot send a request with non-Latin characters as productsCount,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with non-Latin characters as the productsCount value
+
+3. The user cannot send a request with non-Latin charaters as the productsCount data
+
+4. The user gets 400 Bad Request ","<InputModel>
+    <productsCount>测试</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>",- 400 Bad Request returned in the response,-200 OK returned in the response,Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-18
+35. Verify the user cannot send a request with special characters as productsCount,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with special characters as the productsCount value
+
+3. The user cannot send a request with special charaters as the productsCount data
+
+4. The user gets 400 Bad Request ","<InputModel>
+    <productsCount>!@$%^&*</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>",- 400 Bad Request returned in the response,-500 Internal Server Error returned in the response,Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-19
+36. Verify the user cannot send a request with an empty productsCount,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with an empty productsCount value
+
+3. The user cannot send a request with an empty productsCount value
+
+4. The user gets 400 Bad Request ","<InputModel>
+    <productsCount></productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>",- 400 Bad Request returned in the response,-200 OK returned in the response,Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-18
+37. Verify the user cannot send a request with a missing productsCount parameter,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with a missing productsCount parameter
+
+3. The user cannot send a request with a missing productsCount parameter
+
+4. The user gets 400 Bad Request ","<InputModel>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>",- 400 Bad Request returned in the response,-500 Internal Server Error returned in the response,Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-19
+38. Verify the user cannot send a request with non-Latin characters as productsWeight,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with non-Latin characters as the productsWeight value
+
+3. The user cannot send a request with non-Latin charaters as the productsWeight data
+
+4. The user gets 400 Bad Request ","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>测试</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>",- 400 Bad Request returned in the response,-200 OK returned in the response,Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-20
+38. Verify the user cannot send a request with special characters as productsWeight,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with special characters as the productsWeight value
+
+3. The user cannot send a request with special charaters as the productsWeight data
+
+4. The user gets 400 Bad Request ","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>!@#$%^&*</productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>",- 400 Bad Request returned in the response,-500 Internal Server Error returned in the response,Failed,https://tstewart5487qa.atlassian.net/jira/software/projects/S4AT/boards/69?selectedIssue=S4AT-21
+39. Verify the user cannot send a request with an empty productsWeight,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with an empty productsWeight value
+
+3. The user cannot send a request with an empty productsWeight data
+
+4. The user gets 400 Bad Request ","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight></productsWeight>
+    <deliveryTime>10</deliveryTime>
+</InputModel>",- 400 Bad Request returned in the response,-200 OK returned in the response,Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-20
+40. Verify the user cannot send a request with a missing productsWeight parameter,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with a missing productsWeight paramater
+
+3. The user cannot send a request with missing productsWeight parameter
+
+4. The user gets 400 Bad Request ","<InputModel>
+    <productsCount>4</productsCount>
+    <deliveryTime>10</deliveryTime>
+</InputModel>",- 400 Bad Request returned in the response,-500 Internal Server Error returned in the response,Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-22
+41. Verify the user cannot send a request with non-Latin characters as deliveryTime,"1.The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with non-Latin characters as the deliveryTime value
+
+3. The user cannot send a request with invalid deliveryTime data
+
+4. The user gets Status: 400 Bad Request ","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>测试</deliveryTime>
+</InputModel>",- 400 Bad Request returned in the response,-200 OK returned in the response,Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-23
+42. Verify the user cannot send a request with special characters as deliveryTime,"1.The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with special characters as the deliveryTime value
+
+3. The user cannot send a request with invalid deliveryTime data
+
+4. The user gets Status: 400 Bad Request ","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>!@#$%^&*</deliveryTime>
+</InputModel>",- 400 Bad Request returned in the response,- 500 Internal Server Error returned in the response,Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-24
+43. Verify the user cannot send a request with an empty deliveryTime,"1.The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with an empty deliveryTime value
+
+3. The user cannot send a request with an emptydeliveryTime parameter
+
+4. The user gets Status: 400 Bad Request ","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime></deliveryTime>
+</InputModel>",- 400 Bad Request returned in the response,-200 OK returned in the response,Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-23
+44. Verify the user cannot send a request with a missing deliveryTime parameter,"1.The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with a missing deliveryTime parameter
+
+3. The user cannot send a request with a missing deliveryTime parameter
+
+4. The user gets Status: 400 Bad Request ","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>1.0</productsWeight>
+</InputModel>",- 400 Bad Request returned in the response,- 500 Internal Server Error returned in the response,Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-24
+45. Verify the user cannot send a request with a missing request body,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with no request body
+
+3. The user cannot send a request with a missing request body
+
+4. The user gets Status: 400 Bad Request on the response",null,- 400 Bad Request returned in the response,- 500 Internal Server Error returned in the response,Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-24
+46. Verify the user cannot send a request with incorrect XML formatting (missing closing tag),"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with a missing closing tag in the XML body
+
+3. The user cannot send a request with a incorrect XML
+
+4. The user gets Status: 400 Bad Request on the response","<InputModel>
+    <productsCount>4</productsCount>
+    <productsWeight>1.0</productsWeight>
+    <deliveryTime>10</deliveryTime>",- 400 Bad Request returned in the response,- 500 Internal Server Error returned in the response,Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-24
+47.Verify the user cannot get a delivery when the delivery time is 0,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with deliveryTime of 0 (outside operating hours)
+
+3. The user cannot get a delivery outside of operating hours
+
+4. The user gets isItPossibleToDeliver=""false"" and  200 OK on the response","<InputModel>
+    <productsCount>2</productsCount>
+    <productsWeight>5.115</productsWeight>
+    <deliveryTime>0</deliveryTime>
+</InputModel>","-200 OK returned on the response
+
+ isItPossibleToDeliver=""false""","- 200 OK returned in the response
+
+- isItPossibleToDeliver=""false"" is not returned
+
+-<response name=""Fast Delivery""/> is returned",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-11
+48.Verify the user cannot get a delivery when the delivery time is 1,"1. The user selects POST request with URL + /fast-delivery/v3.1.1/calculate-delivery.xml
+
+2. The user sends a request with deliveryTime of 1 (outside operating hours)
+
+3. The user cannot get a delivery outside of operating hours
+
+4. The user gets isItPossibleToDeliver=""false"" and  200 OK on the response","<InputModel>
+    <productsCount>2</productsCount>
+    <productsWeight>5.115</productsWeight>
+    <deliveryTime>1</deliveryTime>
+</InputModel>","-200 OK returned on the response
+
+ isItPossibleToDeliver=""false""","- 200 OK returned in the response
+
+- isItPossibleToDeliver=""false"" is not returned
+
+-<response name=""Fast Delivery""/> is returned",Failed,https://tstewart5487qa.atlassian.net/browse/S4AT-12
